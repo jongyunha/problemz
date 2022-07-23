@@ -1,6 +1,7 @@
 package io.jongyun.learndgs.component.fake
 
 import com.netflix.dgs.codegen.generated.DgsConstants
+import com.netflix.dgs.codegen.generated.DgsConstants.QUERY.BOOKSBYRELEASED_INPUT_ARGUMENT
 import com.netflix.dgs.codegen.generated.types.Book
 import com.netflix.dgs.codegen.generated.types.ReleaseHistory
 import com.netflix.dgs.codegen.generated.types.ReleaseHistoryInput
@@ -15,7 +16,7 @@ import org.springframework.util.StringUtils
 class FakeBookDataResolver {
 
     @DgsData(parentType = "Query", field = "books")
-    fun booksWrittendBy(@InputArgument(name = "author") author: String?): List<Book> {
+    fun booksWrittenBy(@InputArgument(name = "author") author: String?): List<Book> {
         return if (!StringUtils.hasText(author)) {
             FakeBookDataSource.BOOK_LIST
         } else {
@@ -25,7 +26,8 @@ class FakeBookDataResolver {
 
     @DgsData(parentType = DgsConstants.QUERY_TYPE, field = DgsConstants.QUERY.BooksByReleased)
     fun getBooksByReleased(dataFetchingEnvironment: DgsDataFetchingEnvironment): List<Book> {
-        val releasedMap = dataFetchingEnvironment.getArgument<Map<String, Any>>("releasedInput")
+        val releasedMap =
+            dataFetchingEnvironment.getArgument<Map<String, Any>>(BOOKSBYRELEASED_INPUT_ARGUMENT.toString())
 
         val releaseHistoryInput = ReleaseHistoryInput(
             printedEdition = releasedMap["printedEdition"] as Boolean,
