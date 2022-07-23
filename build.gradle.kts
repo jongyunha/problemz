@@ -45,3 +45,15 @@ tasks.withType<KotlinCompile> {
 tasks.withType<Test> {
     useJUnitPlatform()
 }
+
+tasks.withType<com.netflix.graphql.dgs.codegen.gradle.GenerateJavaTask> {
+//    schemaPaths = mutableListOf("${projectDir}/src/main/resources/schema/course.graphql")
+//    generateClient = true
+//    packageName = "io.jongyun.learndgs.domain.generated"
+    generateDataTypes = true
+    snakeCaseConstantNames = true
+    language = "kotlin"
+    typeMapping = mutableMapOf(
+        "Url" to "java.net.URL",
+    )
+}

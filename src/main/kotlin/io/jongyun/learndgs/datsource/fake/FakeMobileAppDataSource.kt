@@ -5,6 +5,8 @@ import com.netflix.dgs.codegen.generated.types.Address
 import com.netflix.dgs.codegen.generated.types.Author
 import com.netflix.dgs.codegen.generated.types.MobileApp
 import org.springframework.context.annotation.Configuration
+import java.net.URL
+import java.time.LocalDate
 import java.util.*
 import java.util.concurrent.ThreadLocalRandom
 import javax.annotation.PostConstruct
@@ -31,8 +33,13 @@ class FakeMobileAppDataSource(
                 author = author,
                 version = faker.app().version(),
                 platform = randomMobileAppPlatform(),
-                id = UUID.randomUUID().toString()
+                id = UUID.randomUUID().toString(),
+                releaseDate = LocalDate.now(),
+                downloaded = Math.random().toInt(),
+                homepage = URL("https://${faker.internet().url()}")
             )
+
+
 
             (0..ThreadLocalRandom.current().nextInt(1, 3)).forEach() {
                 val address = Address(
