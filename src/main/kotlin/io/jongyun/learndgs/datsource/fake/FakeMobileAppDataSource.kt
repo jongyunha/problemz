@@ -5,6 +5,7 @@ import com.netflix.dgs.codegen.generated.types.Address
 import com.netflix.dgs.codegen.generated.types.Author
 import com.netflix.dgs.codegen.generated.types.MobileApp
 import org.springframework.context.annotation.Configuration
+import java.util.*
 import java.util.concurrent.ThreadLocalRandom
 import javax.annotation.PostConstruct
 
@@ -30,6 +31,7 @@ class FakeMobileAppDataSource(
                 author = author,
                 version = faker.app().version(),
                 platform = randomMobileAppPlatform(),
+                id = UUID.randomUUID().toString()
             )
 
             (0..ThreadLocalRandom.current().nextInt(1, 3)).forEach() {

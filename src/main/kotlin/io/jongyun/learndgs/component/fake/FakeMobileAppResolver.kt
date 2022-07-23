@@ -32,7 +32,7 @@ fun matchFilter(mobileAppFilter: MobileAppFilter, mobileApp: MobileApp): Boolean
     return if (!isAppMath) {
         false
     } else if (StringUtils.isNoneBlank(mobileAppFilter.platform)) {
-        return false
+        return true
     } else {
         true
     }

@@ -3,6 +3,7 @@ type MobileApp {
     version: String!
     platform: [String]
     author: Author
+    id: ID!
 }
 
 input MobileAppFilter {
