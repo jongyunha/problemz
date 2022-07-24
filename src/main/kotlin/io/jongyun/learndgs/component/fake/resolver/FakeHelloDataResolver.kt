@@ -1,4 +1,4 @@
-package io.jongyun.learndgs.component.fake
+package io.jongyun.learndgs.component.fake.resolver
 
 import com.netflix.dgs.codegen.generated.types.Hello
 import com.netflix.graphql.dgs.DgsComponent

@@ -14,3 +14,8 @@ type Query {
     smartSearch(keyword: String): [SmartSearchResult]
 }
 
+type Mutation {
+    addHello(helloInput: HelloInput!): Int
+    replaceHelloText(helloInput: HelloInput): [Hello]
+    deleteHello(number: Int!): Int
+}
