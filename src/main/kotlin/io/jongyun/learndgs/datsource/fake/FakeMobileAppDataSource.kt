@@ -4,6 +4,7 @@ import com.github.javafaker.Faker
 import com.netflix.dgs.codegen.generated.types.Address
 import com.netflix.dgs.codegen.generated.types.Author
 import com.netflix.dgs.codegen.generated.types.MobileApp
+import com.netflix.dgs.codegen.generated.types.MobileAppCategory
 import org.springframework.context.annotation.Configuration
 import java.net.URL
 import java.time.LocalDate
@@ -36,7 +37,8 @@ class FakeMobileAppDataSource(
                 id = UUID.randomUUID().toString(),
                 releaseDate = LocalDate.now(),
                 downloaded = Math.random().toInt(),
-                homepage = URL("https://${faker.internet().url()}")
+                homepage = URL("https://${faker.internet().url()}"),
+                category = MobileAppCategory.values()[faker.random().nextInt(MobileAppCategory.values().count())]
             )
 
 
