@@ -1,6 +1,8 @@
 scalar Date
 scalar Url
 
+union SmartSearchResult = Book | Hello
+
 # DGS framework 에서는 Root query 가 필요하고 그이름은 Query 여야 합니다.
 type Query {
     allHellos: [Hello]
@@ -9,5 +11,6 @@ type Query {
     booksByReleased(releasedInput: ReleaseHistoryInput!): [Book]
     mobileApps(mobileAppFilter: MobileAppFilter!): [MobileApp]
     pets(petFilter: PetFilter): [Pet]
+    smartSearch(keyword: String): [SmartSearchResult]
 }
 
