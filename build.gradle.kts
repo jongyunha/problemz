@@ -30,6 +30,7 @@ dependencies {
     implementation(platform("com.netflix.graphql.dgs:graphql-dgs-platform-dependencies:latest.release"))
     implementation("com.netflix.graphql.dgs:graphql-dgs-spring-boot-starter")
     implementation("com.netflix.graphql.dgs:graphql-dgs-extended-scalars")
+    implementation("com.netflix.graphql.dgs:graphql-dgs-subscriptions-websockets-autoconfigure")
 
     // dummy data 를 만들기 위해서
     implementation("com.github.javafaker:javafaker:1.0.2")
@@ -54,6 +55,6 @@ tasks.withType<com.netflix.graphql.dgs.codegen.gradle.GenerateJavaTask> {
     snakeCaseConstantNames = true
     language = "kotlin"
     typeMapping = mutableMapOf(
-        "Url" to "java.net.URL",
+        "Url" to "java.net.URL"
     )
 }

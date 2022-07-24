@@ -1,5 +1,6 @@
 scalar Date
 scalar Url
+scalar DateTime
 
 union SmartSearchResult = Book | Hello
 
@@ -19,4 +20,8 @@ type Mutation {
     addHello(helloInput: HelloInput!): Int
     replaceHelloText(helloInput: HelloInput): [Hello]
     deleteHello(number: Int!): Int
+}
+
+type Subscription {
+    randomStock: Stock
 }
