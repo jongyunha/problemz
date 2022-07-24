@@ -1,0 +1,47 @@
+# Database schema 와 graphql schema 는 다르다
+# 데이터베이스에 password 가 있다고 해서 graphql 에 있을 필요는 없다.
+# Mutation  에는 들어간다.
+type User {
+    id: Id!
+    username: String!
+    email: String!
+    avatar: Url
+    createdAt: DateTime!
+    displayName: String
+}
+
+type Problem implements SearchableItem{
+    id: ID!
+    createdAt: DateTime!
+    prettyCreatedAt: String
+    title: String
+    content: String!
+    tags: [String!]!
+    solutionCount: Int!
+}
+
+type Solution implements SearchableItem{
+    id: ID!
+    createdAt: DateTime!
+    prettyCreatedAt: String
+    content: String!
+    category: SolutionCategory!
+    voteAsGoodCount: Int
+    voteAsBadCount: Int
+}
+
+enum SolutionCategory {
+    EXPLANTATION
+    REFERENCE
+}
+
+interface SearchableItem {
+    id: ID!
+    createdAt: DateTime!
+    prettyCreatedAt: String
+    content: String!
+}
+
+input SearchItemFilter {
+    keyword: String
+}
