@@ -40,4 +40,6 @@ type Mutation {
 
 type Subscription {
     randomStock: Stock
+    problemAdded: Problem!
+    solutionVoteChanged(solutionId: ID!): Solution!
 }
