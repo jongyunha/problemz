@@ -48,7 +48,7 @@ interface SearchableItem {
 }
 
 input SearchItemFilter {
-    keyword: String
+    keyword: String!
 }
 
 input UserCreateInput {

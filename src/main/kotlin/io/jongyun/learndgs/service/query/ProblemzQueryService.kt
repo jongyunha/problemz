@@ -20,4 +20,8 @@ class ProblemzQueryService(
     fun problemDetail(problemId: UUID): Problemz {
         return problemzRepository.findById(problemId) ?: throw IllegalArgumentException("잘못된 ID 입니다 ID: $problemId")
     }
+
+    fun problemzByKeyword(keyword: String): ArrayList<Problemz> {
+        return problemzRepository.findByKeyword("%$keyword%")
+    }
 }
