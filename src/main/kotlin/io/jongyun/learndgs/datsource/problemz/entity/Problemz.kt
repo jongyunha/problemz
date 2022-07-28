@@ -20,6 +20,7 @@ class Problemz(
     var id: UUID? = id
 
     @OneToMany(mappedBy = "problem")
+    @OrderBy("createdAt desc")
     var solutionzList: MutableList<Solutionz> = mutableListOf()
 
     @ManyToOne
