@@ -18,7 +18,7 @@ class Problemz(
     @Id
     var id: UUID? = id
 
-    @OneToMany(mappedBy = "problemz", cascade = [CascadeType.REMOVE])
+    @OneToMany(mappedBy = "problem")
     var solutionzList: MutableList<Solutionz> = mutableListOf()
 
     @ManyToOne

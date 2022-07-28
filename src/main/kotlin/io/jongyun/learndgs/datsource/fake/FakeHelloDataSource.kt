@@ -1,7 +1,7 @@
 package io.jongyun.learndgs.datsource.fake
 
 import com.github.javafaker.Faker
-import com.netflix.dgs.codegen.generated.types.Hello
+import io.jongyun.learndgs.types.Hello
 import org.springframework.context.annotation.Configuration
 import javax.annotation.PostConstruct
 

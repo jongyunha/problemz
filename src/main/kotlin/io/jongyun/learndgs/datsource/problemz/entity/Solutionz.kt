@@ -22,11 +22,11 @@ class Solutionz(
     @Id
     var id: UUID = id
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "created_by", nullable = false)
     var createdBy: Userz = createdBy
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "problem", nullable = false)
     var problem: Problemz = problem
 }

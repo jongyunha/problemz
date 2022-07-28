@@ -1,10 +1,10 @@
 package io.jongyun.learndgs.component.fake.resolver
 
-import com.netflix.dgs.codegen.generated.DgsConstants
-import com.netflix.dgs.codegen.generated.types.Stock
 import com.netflix.graphql.dgs.DgsComponent
 import com.netflix.graphql.dgs.DgsData
+import io.jongyun.learndgs.DgsConstants
 import io.jongyun.learndgs.datsource.fake.FakeStockDataSource
+import io.jongyun.learndgs.types.Stock
 import org.reactivestreams.Publisher
 import reactor.core.publisher.Flux
 import java.time.Duration

@@ -1,12 +1,12 @@
 package io.jongyun.learndgs.component.fake.resolver
 
-import com.netflix.dgs.codegen.generated.DgsConstants
-import com.netflix.dgs.codegen.generated.types.SmartSearchResult
 import com.netflix.graphql.dgs.DgsComponent
 import com.netflix.graphql.dgs.DgsData
 import com.netflix.graphql.dgs.InputArgument
+import io.jongyun.learndgs.DgsConstants
 import io.jongyun.learndgs.datsource.fake.FakeBookDataSource
 import io.jongyun.learndgs.datsource.fake.FakeHelloDataSource
+import io.jongyun.learndgs.types.SmartSearchResult
 
 @DgsComponent
 class FakeSmartSearchDataResolver {

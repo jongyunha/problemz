@@ -7,7 +7,6 @@ plugins {
     kotlin("plugin.spring") version "1.6.21"
     kotlin("plugin.allopen") version "1.6.21"
     kotlin("plugin.jpa") version "1.6.21"
-    kotlin("kapt") version "1.6.21"
     id("com.netflix.dgs.codegen") version "5.1.16"
 }
 
@@ -45,7 +44,7 @@ dependencies {
     // dummy data 를 만들기 위해서
     implementation("com.github.javafaker:javafaker:1.0.2")
 
-    runtimeOnly("org.postgresql:postgresql")
+    implementation("com.h2database:h2")
 }
 
 tasks.withType<KotlinCompile> {
@@ -62,7 +61,7 @@ tasks.withType<Test> {
 tasks.withType<com.netflix.graphql.dgs.codegen.gradle.GenerateJavaTask> {
 //    schemaPaths = mutableListOf("${projectDir}/src/main/resources/schema/course.graphql")
 //    generateClient = true
-//    packageName = "io.jongyun.learndgs.domain.generated"
+    packageName = "io.jongyun.learndgs"
     generateDataTypes = true
     snakeCaseConstantNames = true
     language = "kotlin"

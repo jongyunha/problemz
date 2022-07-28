@@ -1,10 +1,10 @@
 package io.jongyun.learndgs.datsource.fake
 
 import com.github.javafaker.Faker
-import com.netflix.dgs.codegen.generated.types.Cat
-import com.netflix.dgs.codegen.generated.types.Dog
-import com.netflix.dgs.codegen.generated.types.Pet
-import com.netflix.dgs.codegen.generated.types.PetFoodType
+import io.jongyun.learndgs.types.Cat
+import io.jongyun.learndgs.types.Dog
+import io.jongyun.learndgs.types.Pet
+import io.jongyun.learndgs.types.PetFoodType
 import org.springframework.context.annotation.Configuration
 import javax.annotation.PostConstruct
 

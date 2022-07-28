@@ -1,9 +1,9 @@
 package io.jongyun.learndgs.component.fake.resolver
 
-import com.netflix.dgs.codegen.generated.types.Hello
 import com.netflix.graphql.dgs.DgsComponent
 import com.netflix.graphql.dgs.DgsQuery
 import io.jongyun.learndgs.datsource.fake.FakeHelloDataSource
+import io.jongyun.learndgs.types.Hello
 import java.util.concurrent.ThreadLocalRandom
 
 @DgsComponent

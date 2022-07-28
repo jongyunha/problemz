@@ -1,14 +1,14 @@
 package io.jongyun.learndgs.component.fake.resolver
 
-import com.netflix.dgs.codegen.generated.DgsConstants
-import com.netflix.dgs.codegen.generated.types.Cat
-import com.netflix.dgs.codegen.generated.types.Dog
-import com.netflix.dgs.codegen.generated.types.Pet
-import com.netflix.dgs.codegen.generated.types.PetFilter
 import com.netflix.graphql.dgs.DgsComponent
 import com.netflix.graphql.dgs.DgsData
 import com.netflix.graphql.dgs.InputArgument
+import io.jongyun.learndgs.DgsConstants
 import io.jongyun.learndgs.datsource.fake.FakePetDataSource
+import io.jongyun.learndgs.types.Cat
+import io.jongyun.learndgs.types.Dog
+import io.jongyun.learndgs.types.Pet
+import io.jongyun.learndgs.types.PetFilter
 import org.apache.commons.lang3.StringUtils
 
 @DgsComponent

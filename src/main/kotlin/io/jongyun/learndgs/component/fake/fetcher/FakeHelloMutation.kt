@@ -1,14 +1,14 @@
 package io.jongyun.learndgs.component.fake.fetcher
 
-import com.netflix.dgs.codegen.generated.DgsConstants.MUTATION.AddHello
-import com.netflix.dgs.codegen.generated.DgsConstants.MUTATION.DeleteHello
-import com.netflix.dgs.codegen.generated.DgsConstants.MUTATION.ReplaceHelloText
-import com.netflix.dgs.codegen.generated.types.Hello
-import com.netflix.dgs.codegen.generated.types.HelloInput
 import com.netflix.graphql.dgs.DgsComponent
 import com.netflix.graphql.dgs.DgsMutation
 import com.netflix.graphql.dgs.InputArgument
+import io.jongyun.learndgs.DgsConstants.MUTATION.AddHello
+import io.jongyun.learndgs.DgsConstants.MUTATION.DeleteHello
+import io.jongyun.learndgs.DgsConstants.MUTATION.ReplaceHelloText
 import io.jongyun.learndgs.datsource.fake.FakeHelloDataSource
+import io.jongyun.learndgs.types.Hello
+import io.jongyun.learndgs.types.HelloInput
 
 @DgsComponent
 class FakeHelloMutation {
@@ -22,7 +22,7 @@ class FakeHelloMutation {
 
     @DgsMutation(field = ReplaceHelloText)
     fun replaceHelloText(@InputArgument(name = "helloInput") helloInput: HelloInput): List<Hello> {
-//        FakeHelloDataSource.HELLO_LIST.filter { it.randomNumber == helloInput.number }
+        FakeHelloDataSource.HELLO_LIST.filter { it.randomNumber == helloInput.number }
 //            .forEach { hello -> hello.text = helloInput.text }
 
         return FakeHelloDataSource.HELLO_LIST

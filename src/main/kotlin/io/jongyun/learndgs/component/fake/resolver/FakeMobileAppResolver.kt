@@ -1,12 +1,12 @@
 package io.jongyun.learndgs.component.fake.resolver
 
-import com.netflix.dgs.codegen.generated.DgsConstants
-import com.netflix.dgs.codegen.generated.types.MobileApp
-import com.netflix.dgs.codegen.generated.types.MobileAppFilter
 import com.netflix.graphql.dgs.DgsComponent
 import com.netflix.graphql.dgs.DgsData
 import com.netflix.graphql.dgs.InputArgument
+import io.jongyun.learndgs.DgsConstants
 import io.jongyun.learndgs.datsource.fake.FakeMobileAppDataSource
+import io.jongyun.learndgs.types.MobileApp
+import io.jongyun.learndgs.types.MobileAppFilter
 import org.apache.commons.lang3.StringUtils
 
 @DgsComponent
@@ -20,7 +20,8 @@ class FakeMobileAppResolver {
         return if (filter == null) {
             FakeMobileAppDataSource.MOBILE_APP_LIST
         } else {
-            FakeMobileAppDataSource.MOBILE_APP_LIST.filter { matchFilter(filter, it) }
+            FakeMobileAppDataSource.MOBILE_APP_LIST
+//            FakeMobileAppDataSource.MOBILE_APP_LIST.filter { matchFilter(filter, it) }
         }
     }
 }

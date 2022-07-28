@@ -1,10 +1,10 @@
 package io.jongyun.learndgs.datsource.fake
 
 import com.github.javafaker.Faker
-import com.netflix.dgs.codegen.generated.types.Address
-import com.netflix.dgs.codegen.generated.types.Author
-import com.netflix.dgs.codegen.generated.types.Book
-import com.netflix.dgs.codegen.generated.types.ReleaseHistory
+import io.jongyun.learndgs.types.Address
+import io.jongyun.learndgs.types.Author
+import io.jongyun.learndgs.types.Book
+import io.jongyun.learndgs.types.ReleaseHistory
 import org.springframework.context.annotation.Configuration
 import java.util.concurrent.ThreadLocalRandom
 import javax.annotation.PostConstruct

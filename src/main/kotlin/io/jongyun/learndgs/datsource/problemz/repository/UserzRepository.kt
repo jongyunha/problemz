@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository
 import java.util.*
 
 @Repository
-interface UserzRepository : JpaRepository<Userz, UUID> {
+interface UserzRepository : JpaRepository<Userz, UUID?> {
 }
