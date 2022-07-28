@@ -14,6 +14,7 @@ class Userz(
     id: UUID?,
     var username: String,
     var email: String,
+    var displayName: String,
     var hashedPassword: String,
     var avatar: URL,
     @CreationTimestamp

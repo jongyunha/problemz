@@ -14,6 +14,7 @@ class Problemz(
     var tsgs: String,
     @CreationTimestamp
     var createdAt: LocalDateTime,
+    createdBy: Userz
 ) {
     @Id
     var id: UUID? = id
@@ -23,5 +24,5 @@ class Problemz(
 
     @ManyToOne
     @JoinColumn(name = "created_by", nullable = false)
-    var createdBy: Userz? = null
+    var createdBy: Userz = createdBy
 }
